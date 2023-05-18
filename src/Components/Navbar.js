@@ -50,15 +50,17 @@ export default function Navbar(props) {
               Search
             </button>
           </form>
-                        {/* Switch Dark Mode   */}
-          <div className={`form-check form-switch mx-3 text-${props.mode === "light" ? "dark" : "light"}`}>
-            <input className="form-check-input" onClick={props.toggleMode} type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
-            <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable Dark Mode</label>
+          
+          <div className="d-flex">
+            <div className="bg-primary rounded mx-2" onClick={()=>{props.toggleMode("primary")}} style={{height : '30px', width : '30px'  , cursor:'pointer'}}></div>
+            <div className="bg-warning rounded mx-2" onClick={()=>{props.toggleMode("warning")}} style={{height : '30px', width : '30px'  , cursor:'pointer'}}></div>
+            <div className="bg-success rounded mx-2" onClick={()=>{props.toggleMode("success")}} style={{height : '30px', width : '30px'  , cursor:'pointer'}}></div>
+            <div className="bg-danger rounded mx-2" onClick={()=>{props.toggleMode("danger")}} style={{height : '30px', width : '30px'  , cursor:'pointer'}}></div>
           </div>
-                        {/* Switch Green Dark Mode  */}
+
           <div className={`form-check form-switch mx-3 text-${props.mode === "light" ? "dark" : "light"}`}>
-            <input className="form-check-input" onClick={props.greenToggleMode} type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
-            <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Green Dark Mode</label>
+            <input className="form-check-input" onClick={()=>{props.toggleMode(null)}} type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
+            <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable Dark Mode</label>
           </div>
         </div>
       </div>
